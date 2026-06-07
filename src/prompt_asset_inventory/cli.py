@@ -48,7 +48,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.output:
             output_path = Path(args.output)
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            output_path.write_text(rendered, encoding="utf-8", newline="")
+            with output_path.open("w", encoding="utf-8", newline="") as handle:
+                handle.write(rendered)
         else:
             sys.stdout.write(rendered)
         if args.check and (result.failed or (args.fail_on_empty and not result.assets)):
