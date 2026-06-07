@@ -1,0 +1,19 @@
+{
+  "required_fields": ["owner", "purpose", "version", "privacy", "source", "citations"],
+  "ignore_paths": ["ignored/**"],
+  "max_snippet_chars": 220,
+  "severity": {
+    "missing_required": "warning",
+    "pii": "warning",
+    "secret": "error"
+  },
+  "path_defaults": [
+    {
+      "path": "prompts/owned-by-default.md",
+      "metadata": {
+        "owner": "ai-platform",
+        "source": "examples/path-defaults"
+      }
+    }
+  ]
+}

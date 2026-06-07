@@ -1,0 +1,20 @@
+{
+  "owner": "platform-quality",
+  "purpose": "validate tool schema compliance",
+  "version": "2026.06",
+  "privacy": "synthetic only",
+  "source": "examples/evals/tool-schema.json",
+  "citations": "qa-plan.md",
+  "eval_case": "assistant must reject malformed tool arguments",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Follow the tool schema exactly."
+    },
+    {
+      "role": "user",
+      "content": "Call search with an integer query."
+    }
+  ],
+  "expected_output": "Refuse the malformed argument and ask for a string query."
+}
